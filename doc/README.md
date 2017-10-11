@@ -12,7 +12,7 @@ In order to use this API, you will need to
 * [How to use the API](./howtousetheapi.md)
 <!--* [Request structure](./requests.md)-->
 * [Response structure](./responses.md)
-* [Sandbox data](./sandboxdata.md)
+<!--* [Sandbox data](./sandboxdata.md)
 
 <!--## Swagger
 
