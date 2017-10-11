@@ -19,7 +19,7 @@ NxtPort is collaborating with APCS on offering the same functionality as an API 
 ```
 /
   /doc            technical documentation about the use of this API
-  /src            sample source code to call this API 
+  /src            sample source code to call this API (coming soon)
 ```
 
 ## More information
