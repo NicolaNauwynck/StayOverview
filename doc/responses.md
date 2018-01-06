@@ -24,14 +24,14 @@ In case of an error, the response can either be empty or can contain a JSON obje
 
 In voyage:
 - the from location is the entry location
-- the to location is the berth location
+- the to location is the berth destination
 
 Shift voyagge:
 - the from location is the berth origin
 - the to location is the berth destination
 
 Out voyage:
-- the from location is the berth location
+- the from location is the berth origin
 - the to location is the exit location
 
 Transit voyage:
