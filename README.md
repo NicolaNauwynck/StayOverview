@@ -24,8 +24,7 @@ With this API you are able to get a realtime overview of all the expected and in
 
 ## More information
 
-For in-port voyages the active voyage is determined based on the following logic: if a voyage is active (not yet docked) than this is the active voyage, if the voyage is docked the next voyage will be returned from the API (if the next voyage is known).
-
+For in-port voyages the active voyage is the voyage that is currently happening and where it has not yet docked. If the voyage has docked than the next known voyage is returned.
 
 Following key information is available through the API:
 - Stay number
