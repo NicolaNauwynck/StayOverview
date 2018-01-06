@@ -1,6 +1,6 @@
 # Vessel Overview API
 
-Get an overview of expected and in port stays for the ports of Antwerp and Zeebrugge.
+Get an overview of expected and in port vessels for the ports of Antwerp and Zeebrugge.
 
 | This documentation applies to v1.0 of this API | 
 | -------- |
