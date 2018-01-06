@@ -10,8 +10,8 @@ In case of an error, the response can either be empty or can contain a JSON obje
 | stayNumber | String  |  | Stay number |
 | voyageNumber | String  |  | Voyage number |
 | voyageType | String  |  | Voyage type (IN / SHIFT / OUT / TRANSIT) |
-| vessel | &lt;Vessel&gt; | | Information about the vessel |
-| agent | &lt;Agent&gt; | | Information about the agent |
+| vessel | Vessel | | Information about the vessel |
+| agent | Agent | | Information about the agent |
 | stayBegin | Date  | yyyy-MM-ddTHH:mm:ssZ (UTC) | When did the stay start (estimated and actual) |
 | stayEnd | Date  | yyyy-MM-ddTHH:mm:ssZ (UTC) | When did the stay end (estimated and actual) |
 | fromLocation | Location | | Where is the vessel moving from in this voyage |
