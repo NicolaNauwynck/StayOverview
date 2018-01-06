@@ -66,7 +66,7 @@ Transit voyage:
 | locode | String  |  | Locode of the location |
 | code | String | | Code of the location |
 | name | String  |  | Name of the location |
-| type | String | | Type of the location point |
+| type | String | | Type of the location |
 | estimatedTime | Date  | yyyy-MM-ddTHH:mm:ssZ (UTC) | Estimated time of location |
 | actualTime | Date | yyyy-MM-ddTHH:mm:ssZ (UTC) | Actual time of location |
 | anchored | Boolean | | Is the vessel anchored at this location |
