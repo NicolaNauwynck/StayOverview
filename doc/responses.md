@@ -20,7 +20,7 @@ In case of an error, the response can either be empty or can contain a JSON obje
 | destinationPort | Port | | Destination port|
 | nextPort | Port | | Next port of call |
 | previousPort | Port | | Previous port of call |
-| passages | List &lt;Passage&gt; | | Relevant passages of the stay |
+| passages | List &lt;Location&gt; | | Relevant passages of the stay |
 
 In voyage:
 - the from location is the entry location
@@ -69,18 +69,6 @@ Transit voyage:
 | type | String | | Type of the location point |
 | estimatedTime | Date  | yyyy-MM-ddTHH:mm:ssZ (UTC) | Estimated time of location |
 | actualTime | Date | yyyy-MM-ddTHH:mm:ssZ (UTC) | Actual time of location |
-| anchored | Boolean | | Is the vessel anchored at this location |
-
-## Passagge properties
-
-| Name        | Type           | Remarks  | Description |
-| ------------- |-------------| -----| ---- |
-| locode | String  |  | Locode of the passagge point |
-| code | String | | Code of the passagge point |
-| name | String  |  | Name of the passagge point |
-| type | String | | Type of the passagge point |
-| estimatedTime | Date  | yyyy-MM-ddTHH:mm:ssZ (UTC) | Estimated time of passage |
-| actualTime | Date | yyyy-MM-ddTHH:mm:ssZ (UTC) | Actual time of passage |
 | anchored | Boolean | | Is the vessel anchored at this location |
 
 ## Port properties
