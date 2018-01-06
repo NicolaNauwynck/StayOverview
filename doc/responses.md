@@ -9,18 +9,34 @@ In case of an error, the response can either be empty or can contain a JSON obje
 | ------------- |-------------| -----| ---- |
 | stayNumber | String  |  | Stay number |
 | voyageNumber | String  |  | Voyage number |
-| voyaggeType | String  |  | Voyagge type (IN / SHIFT / OUT / TRANSIT) |
+| voyageType | String  |  | Voyage type (IN / SHIFT / OUT / TRANSIT) |
 | vessel | &lt;Vessel&gt; | | Information about the vessel |
 | agent | &lt;Agent&gt; | | Information about the agent |
 | stayBegin | Date  | yyyy-MM-ddTHH:mm:ssZ (UTC) | When did the stay start (estimated and actual) |
 | stayEnd | Date  | yyyy-MM-ddTHH:mm:ssZ (UTC) | When did the stay end (estimated and actual) |
-| fromLocation | &lt;Location&gt; | | Where is the vessel moving from in this voyage |
-| toLocation | &lt;Location&gt; | | Where is the vessel moving to in this voyage |
-| originPort | &lt;Port&gt; | | Origin Port |
-| destinationPort | &lt;Port&gt; | | Destination port|
-| nextPort | &lt;Port&gt; | | Next port of call |
-| previousPort | &lt;Port&gt; | | Previous port of call |
+| fromLocation | Location | | Where is the vessel moving from in this voyage |
+| toLocation | Location | | Where is the vessel moving to in this voyage |
+| originPort | Port | | Origin Port |
+| destinationPort | Port | | Destination port|
+| nextPort | Port | | Next port of call |
+| previousPort | Port | | Previous port of call |
 | passages | List &lt;Passage&gt; | | Relevant passages of the stay |
+
+In voyage:
+- the from location is the entry location
+- the to location is the berth location
+
+Shift voyagge:
+- the from location is the berth location the vessel is leaving
+- the to location is the berth location the vessel is going to
+
+Out voyage:
+- the from location is the berth location
+- the to location is the exit location
+
+Transit voyage:
+- the from location is the entry location
+- the to location is the exit location
 
 ## Vessel properties
 
