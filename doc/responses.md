@@ -1,24 +1,75 @@
 # Responses
-The response in case of a HTTP Status Code 200 will be a single JSON object containing the information of a vessel and its stays of the last 2 months or upcoming ones in the Port of Antwerp. The structure of this is specified in the swagger file of this API. Only non-null fields will be returned.In case of an error, the response can either be empty or can contain a JSON object (in case of authentication issues) describing the issue.
+The response in case of a HTTP Status Code 200 will be an array containing JSON objects with information of all seagoing vessels in Antwerp and Zeebrugge. The structure of this is specified in the swagger file of this API. Only non-null fields will be returned.
 
-## Vessel properties| Name        | Type           | Remarks  | Description |
-| ------------- |-------------| -----| ---- |
-| vesselName | String | | The name of the seagoing vessel  |
-| imoNumber  | Number | | The IMO number  |
-| vesselType  | String | Apics coded  | Apics vessel type  |
-| flag | String | ISO 3166  | ISO code of the flag  || countryNl | String | | Full name of the country (flag) in Dutch  |
-| countryEn | String | | Full name of the country (flag) in English |
-| loa | Number | | Length over all || gbr | Number  | | Extreme Breadth || stays | List &lt;Stay&gt; | | Containing none or more stays |
+In case of an error, the response can either be empty or can contain a JSON object (in case of authentication issues) describing the issue.
 
-## Stay properties
-| Name        | Type           | Remarks  | Description |
+## Voyage properties
+
+| Name        | Type           | Remarks  | Description |
 | ------------- |-------------| -----| ---- |
 | stayNumber | String  |  | Stay number |
-| agentCode | String | Apics coded | Apics code of the shipping agent |
-| agentName | String | | Full name of the shipping agent |
-| eta | Date | yyyy-MM-ddTHH:mm:ssZ (UTC) | Estimated time of arrival |
-| ata | Date | yyyy-MM-ddTHH:mm:ssZ (UTC) | Actual time of arrival |
-| etd | Date | yyyy-MM-ddTHH:mm:ssZ (UTC) | Estimated time of departure || atd | Date |yyyy-MM-ddTHH:mm:ssZ (UTC) | Actual time of departure || berthArrival | String | Apics berth code | Berth of the first arrival in the Port of Antwerp |
-| berthDeparture | String | Apics berth code | Berth of departure in the Port of Antwerp || origin | String | Locode | Previous port of call |
-| originFull | String | | Full name of the previous port || destination | String | Locode | Next port of call |
-| destinationFull | String | | Full name of the next port |
+| voyageNumber | String  |  | Voyage number |
+| voyaggeType | String  |  | Voyagge type (IN / SHIFT / OUT / TRANSIT) |
+| vessel | &lt;Vessel&gt; | | Information about the vessel |
+| agent | &lt;Agent&gt; | | Information about the agent |
+| stayBegin | Date  | yyyy-MM-ddTHH:mm:ssZ (UTC) | When did the stay start (estimated and actual) |
+| stayEnd | Date  | yyyy-MM-ddTHH:mm:ssZ (UTC) | When did the stay end (estimated and actual) |
+| fromLocation | &lt;Location&gt; | | Where is the vessel moving from in this voyage |
+| toLocation | &lt;Location&gt; | | Where is the vessel moving to in this voyage |
+| originPort | &lt;Port&gt; | | Origin Port |
+| destinationPort | &lt;Port&gt; | | Destination port|
+| nextPort | &lt;Port&gt; | | Next port of call |
+| previousPort | &lt;Port&gt; | | Previous port of call |
+| passages | List &lt;Passage&gt; | | Relevant passages of the stay |
+
+## Vessel properties
+
+| Name        | Type           | Remarks  | Description |
+| ------------- |-------------| -----| ---- |
+| name | String | | The name of the seagoing vessel  |
+| imoNumber  | String | | The IMO number of the seagoing vessel |
+| mmsiNumber  | String | | The IMO number of the seagoing vessel |
+| callSign  | String | | The callsign of the vessel  |
+| flag | String | ISO 3166  | ISO code of the flag  |
+| type  | String | Apics coded  | Apics vessel type  |
+| loa | Number | | Length over all |
+| gbr | Number  | | Extreme Breadth |
+| tonnage | Number  | | Tonnage |
+
+## Agent properties
+
+| Name        | Type           | Remarks  | Description |
+| ------------- |-------------| -----| ---- |
+| code | String  |  | Apics code of the shipping agent |
+| name | String | | Full name of the shipping agent |
+
+## Location properties
+
+| Name        | Type           | Remarks  | Description |
+| ------------- |-------------| -----| ---- |
+| locode | String  |  | Locode of the location |
+| code | String | | Code of the location |
+| name | String  |  | Name of the location |
+| type | String | | Type of the location point |
+| estimatedTime | Date  | yyyy-MM-ddTHH:mm:ssZ (UTC) | Estimated time of location |
+| actualTime | Date | yyyy-MM-ddTHH:mm:ssZ (UTC) | Actual time of location |
+| anchored | Boolean | | Is the vessel anchored at this location |
+
+## Passagge properties
+
+| Name        | Type           | Remarks  | Description |
+| ------------- |-------------| -----| ---- |
+| locode | String  |  | Locode of the passagge point |
+| code | String | | Code of the passagge point |
+| name | String  |  | Name of the passagge point |
+| type | String | | Type of the passagge point |
+| estimatedTime | Date  | yyyy-MM-ddTHH:mm:ssZ (UTC) | Estimated time of passage |
+| actualTime | Date | yyyy-MM-ddTHH:mm:ssZ (UTC) | Actual time of passage |
+| anchored | Boolean | | Is the vessel anchored at this location |
+
+## Port properties
+
+| Name        | Type           | Remarks  | Description |
+| ------------- |-------------| -----| ---- |
+| name | String |  | Name of port |
+| locode | String | Locode | Locode of port |
