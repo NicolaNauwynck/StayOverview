@@ -1,6 +1,6 @@
-# Vessel Stay API
+# Vessel Overview API
 
-Look up a vessel's (stay) information in APCS;
+Get an overview of expected and in port stays for the ports of Antwerp and Zeebrugge.
 
 | This documentation applies to v1.0 of this API | 
 | -------- |
@@ -8,11 +8,11 @@ Look up a vessel's (stay) information in APCS;
 
 ## Purpose of this API
 
-**APCS (Antwerp Port Community System)** hosts a web page that, based on a ship's name or IMO number, provides some general information about the ship and a list of its recent (i.e. last 2 months) and upcoming stays.
+**Port+** combines data from different sources in one database to build one dataset of vessels with their relevant stay information.
 
-This functionality on the APCS website is heavily used, but involves manually entering name or IMO number into the web page.
+With this API you are able to get a realtime overview of all the expected and in port vessels for the ports of Antwerp and Zeebrugge. When a vessel is expected the known IN vessel will be returned. When a vessel is in-port the active voyage of that time will be returned.
 
-NxtPort is collaborating with APCS on offering the same functionality as an API on the NxtPort Platform. Allowing applications to get the information from an API means no more manual entry or copy-pasting. 
+
 
 ## Contents of this repository
   
@@ -23,7 +23,39 @@ NxtPort is collaborating with APCS on offering the same functionality as an API 
 ```
 
 ## More information
+`
+For in-port voyages the active voyage is determined based on the following logic: if a voyage is active (not yet docked) than this is the active voyage, if the voyage is docked the next voyage will be returned from the API (if the next voyage is known).
 
-More information about this API is available on
-* [the NxtPort website](https://www.nxtport.eu)
-* [the NxtPort market](https://market.nxtport.eu)
+
+Following key information is available through the API:
+- Stay number
+- Active voyage number
+- Location from where the voyage is moving (entry point or berth location)
+- Location to where the voyage is moving (berth lcoation or exit point  )
+
+- Information about vessel (imo number, name)
+- Information about the responsible agent of the voyage
+- ET and AT Information about the following passagepoints (if available), these can be used to apply custom expected and in-port logic: 
+  - Zeebrugge haven
+  - Coördinatiepunt
+  - Hansweert
+  - Vlissingen rede
+  - Petroleum instellingen zuid
+  - Albertkanaal
+  - Terneuzen sluis
+  - Noordlandbrug
+  - Sas van Gent
+
+Following business rules are applied for Antwerp:
+
+A vessel is expected when it ?
+
+A vessel is in port when it ?
+
+
+Following business rules are applied for Zeebrugge:
+
+A vessel is expected when it has not yet passed "Strekdam"
+
+A vessel is in port when it has passed "Strekdam"
+
