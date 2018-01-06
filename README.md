@@ -23,7 +23,7 @@ With this API you are able to get a realtime overview of all the expected and in
 ```
 
 ## More information
-`
+
 For in-port voyages the active voyage is determined based on the following logic: if a voyage is active (not yet docked) than this is the active voyage, if the voyage is docked the next voyage will be returned from the API (if the next voyage is known).
 
 
@@ -45,17 +45,3 @@ Following key information is available through the API:
   - Terneuzen sluis
   - Noordlandbrug
   - Sas van Gent
-
-Following business rules are applied for Antwerp:
-
-A vessel is expected when it ?
-
-A vessel is in port when it ?
-
-
-Following business rules are applied for Zeebrugge:
-
-A vessel is expected when it has not yet passed "Strekdam"
-
-A vessel is in port when it has passed "Strekdam"
-
