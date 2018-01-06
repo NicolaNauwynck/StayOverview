@@ -27,8 +27,8 @@ In voyage:
 - the to location is the berth location
 
 Shift voyagge:
-- the from location is the berth location the vessel is leaving
-- the to location is the berth location the vessel is going to
+- the from location is the berth origin
+- the to location is the berth destination
 
 Out voyage:
 - the from location is the berth location
